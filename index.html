@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نمونه کارهای رضا شکرمی</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/dist/tailwind.min.js"></script>
+  <script src="https://kit.fontawesome.com/0d94591fa5.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: #7f83f5;
+      transition: width 0.4s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes cardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #5c6ac4;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7f83f5;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-gray-100 min-h-screen flex flex-col overflow-x-hidden antialiased">
+
+  <header
+    class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-lg shadow-lg shadow-indigo-500/20 py-4 px-4 sm:px-6 lg:px-10 flex justify-between items-center rounded-b-2xl">
+    <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-indigo-300 tracking-tight">رزومه و نمونه‌کار رضا
+      شکرمی</h1>
+    <button id="menu-toggle"
+      class="lg:hidden text-gray-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 rounded-md p-2"
+      aria-label="باز کردن منو" aria-expanded="false">
+      <i class="fas fa-bars fa-lg"></i>
+    </button>
+    <nav id="nav-menu" class="hidden lg:flex gap-6 xl:gap-8 items-center">
+      <a href="#projects"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-sm sm:text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="نمونه‌کارها">
+        <i class="fas fa-briefcase text-indigo-400"></i> نمونه‌کارها
+      </a>
+      <a href="#skills"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-sm sm:text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="مهارت‌ها">
+        <i class="fas fa-tools text-indigo-400"></i> مهارت‌ها
+      </a>
+      <a href="#contact"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-sm sm:text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="ارتباط">
+        <i class="fas fa-envelope text-indigo-400"></i> ارتباط
+      </a>
+    </nav>
+    <div id="mobile-menu"
+      class="hidden lg:hidden fixed top-0 right-0 w-full bg-gray-900/95 backdrop-blur-md shadow-lg pt-16 pb-6 px-6 flex flex-col items-end gap-4">
+      <a href="#projects"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="نمونه‌کارها">
+        <i class="fas fa-briefcase text-indigo-400"></i> نمونه‌کارها
+      </a>
+      <a href="#skills"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="مهارت‌ها">
+        <i class="fas fa-tools text-indigo-400"></i> مهارت‌ها
+      </a>
+      <a href="#contact"
+        class="nav-link relative text-gray-300 hover:text-indigo-400 focus:text-indigo-400 font-semibold text-base flex items-center gap-2 transition-colors duration-300 outline-none"
+        aria-label="ارتباط">
+        <i class="fas fa-envelope text-indigo-400"></i> ارتباط
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative z-10">
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title"
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-indigo-300 mb-6 sm:mb-8">نمونه‌کارها</h2>
+      <div id="filter-container" class="flex flex-wrap gap-2 sm:gap-3 justify-center mb-6 sm:mb-8"></div>
+      <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      </div>
+    </section>
+
+    <section id="skills" class="mt-12 sm:mt-16 lg:mt-20" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-indigo-300 mb-6 sm:mb-8">
+        مهارت‌ها</h2>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 max-w-4xl mx-auto">
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          HTML</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          CSS</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          JavaScript</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          React</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          Tailwind CSS</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          PHP</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          MySQL</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          Three.js</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          AI Concepts</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          Python</li>
+        <li
+          class="bg-gray-800/70 p-3 sm:p-4 rounded-xl text-center text-gray-200 font-semibold text-sm sm:text-base transition hover:bg-indigo-900/50">
+          System Programming</li>
+      </ul>
+    </section>
+
+
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 px-4 sm:px-6 lg:px-8 py-10 sm:py-12 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-indigo-400">WOLFA</h2>
+        <p class="text-sm leading-relaxed">پروژه‌ای حرفه‌ای برای هوش مصنوعی و طراحی وب با عشق به آینده</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-indigo-300">لینک‌های مفید</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-indigo-400 transition-colors duration-300">خانه</a></li>
+          <li><a href="#projects" class="hover:text-indigo-400 transition-colors duration-300">نمونه‌کارها</a></li>
+          <li><a href="#" class="hover:text-indigo-400 transition-colors duration-300">درباره من</a></li>
+          <li><a href="#contact" class="hover:text-indigo-400 transition-colors duration-300">تماس با من</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-indigo-300">تماس با من</h3>
+        <ul class="space-y-3 text-sm">
+          <li>📞 09030646388</li>
+          <li>📨 shakramyreza@gmail.com</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-indigo-300">دنبال کن</h3>
+        <div class="flex space-x-4 rtl:space-x-reverse">
+          <a href="https://t.me/RezaShakermi" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300" aria-label="تلگرام"><i
+              class="fab fa-telegram fa-lg"></i></a>
+          <a href="https://github.com/RezaShakaramy"
+            class="text-gray-400 hover:text-indigo-400 transition-colors duration-300" aria-label="گیت‌هاب"><i
+              class="fab fa-github fa-lg"></i></a>
+          <a href="https://www.instagram.com/rezawebdev?igsh=MWZuZGtuZ2NoaTRqZg==" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300" style="
+    margin-right: 16px;
+" aria-label="اینستاگرام"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 sm:mt-10 border-t border-gray-800 pt-6 text-center text-sm">
+      © 2025 Rezashakramy | ساخته‌شده با ❤️ و Three.js
+    </div>
+  </footer>
+
+  <div id="modal"
+    class="fixed inset-0 bg-black/90 backdrop-blur-sm hidden justify-center items-center z-[1000] p-4 transition-opacity duration-300"
+    aria-modal="true" role="dialog">
+    <div id="modal-content"
+      class="bg-gray-900 rounded-2xl max-w-md sm:max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl shadow-indigo-500/30">
+      <button id="modal-close"
+        class="absolute top-4 left-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-9 h-9 flex items-center justify-center text-xl font-bold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        aria-label="بستن مودال">&times;</button>
+      <img id="modal-img" src="" alt="" class="w-full rounded-xl mb-4 object-cover aspect-video bg-gray-800"
+        loading="lazy" />
+      <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-indigo-300 mb-3"></h3>
+      <p id="modal-desc" class="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed"></p>
+      <a id="modal-link" href="#" target="_blank"
+        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 sm:px-6 rounded-xl transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400">مشاهده
+        پروژه</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script>
+    // Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('animate-[slideIn_0.3s_ease_forwards]', !isExpanded);
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menuToggle.innerHTML = isExpanded ? '<i class="fas fa-bars fa-lg"></i>' : '<i class="fas fa-times fa-lg"></i>';
+      document.body.style.overflow = isExpanded ? '' : 'hidden';
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Three.js Background
+    const canvas = document.createElement("canvas");
+    canvas.className = "fixed top-0 left-0 w-full h-full z-0 pointer-events-none";
+    document.body.appendChild(canvas);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1500);
+    camera.position.z = 60;
+
+    const starsGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const positions = new Float32Array(starCount * 3);
+    const sizes = new Float32Array(starCount);
+
+    for (let i = 0; i < starCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 1200;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 1200;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 1200;
+      sizes[i] = Math.random() * 1.5 + 0.3;
+    }
+
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    starsGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+    const starsMaterial = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 1.2,
+      sizeAttenuation: true,
+      transparent: true,
+      opacity: 0.9,
+    });
+
+    const stars = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(stars);
+
+    const glowGeometry = new THREE.BufferGeometry();
+    const glowCount = 200;
+    const glowPositions = new Float32Array(glowCount * 3);
+
+    for (let i = 0; i < glowCount * 3; i++) {
+      glowPositions[i] = (Math.random() - 0.5) * 800;
+    }
+
+    glowGeometry.setAttribute('position', new THREE.BufferAttribute(glowPositions, 3));
+
+    const glowMaterial = new THREE.PointsMaterial({
+      color: 0x7f83f5,
+      size: 3,
+      transparent: true,
+      opacity: 0.25,
+      blending: THREE.AdditiveBlending,
+    });
+
+    const glowParticles = new THREE.Points(glowGeometry, glowMaterial);
+    scene.add(glowParticles);
+
+    let angle = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      stars.rotation.y += 0.0005;
+      stars.rotation.x += 0.0003;
+      glowParticles.rotation.y -= 0.0009;
+      glowParticles.rotation.x -= 0.0006;
+      angle += 0.0012;
+      camera.position.x = Math.sin(angle) * 30;
+      camera.position.y = Math.cos(angle) * 20;
+      camera.lookAt(scene.position);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Projects
+    const SHEET_URL = "https://opensheet.elk.sh/1kNDnfuLVlmXNgxA_kT62i6Pnn33JpKpq8vYAxgRThBo/Sheet1";
+    let projects = [];
+    let filteredProjects = [];
+    let currentFilter = "همه";
+
+    const projectsGrid = document.getElementById("projects-grid");
+    const filterContainer = document.getElementById("filter-container");
+
+    async function loadProjects() {
+      try {
+        const res = await fetch(SHEET_URL);
+        const data = await res.json();
+        if (!Array.isArray(data)) {
+          throw new Error("داده‌های دریافت شده نامعتبر هستند.");
+        }
+        projects = data;
+        createFilters();
+        applyFilter(currentFilter);
+      } catch (error) {
+        projectsGrid.innerHTML = `<p class="text-red-400 text-center p-8 text-sm sm:text-base">خطا در بارگذاری داده‌ها: ${error.message}</p>`;
+        console.error("Error fetching projects:", error);
+      }
+    }
+
+    function createFilters() {
+      const categories = ["همه", ...new Set(projects.map(p => p.category || "بدون دسته"))];
+      filterContainer.innerHTML = "";
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat;
+        btn.className = `px-3 sm:px-4 py-2 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 border border-gray-600/50 hover:bg-indigo-900/50 focus:outline-none focus:ring-2 focus:ring-indigo-400 ${cat === currentFilter ? 'bg-indigo-600 border-indigo-600 shadow-md shadow-indigo-600/50' : 'bg-gray-800/70'}`;
+        btn.setAttribute('aria-pressed', cat === currentFilter ? 'true' : 'false');
+        btn.addEventListener("click", () => {
+          currentFilter = cat;
+          document.querySelectorAll("#filter-container button").forEach(b => {
+            b.classList.remove('bg-indigo-600', 'border-indigo-600', 'shadow-md', 'shadow-indigo-600/50');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('bg-indigo-600', 'border-indigo-600', 'shadow-md', 'shadow-indigo-600/50');
+          btn.setAttribute('aria-pressed', 'true');
+          applyFilter(cat);
+        });
+        filterContainer.appendChild(btn);
+      });
+    }
+
+    function applyFilter(category) {
+      filteredProjects = category === "همه" ? projects : projects.filter(p => p.category === category);
+      renderProjects();
+    }
+
+    function renderProjects() {
+      projectsGrid.innerHTML = "";
+      if (filteredProjects.length === 0) {
+        projectsGrid.innerHTML = `<p class="text-gray-400 text-center p-4 text-sm sm:text-base">نمونه‌کاری یافت نشد.</p>`;
+        return;
+      }
+      filteredProjects.forEach((project, i) => {
+        const card = document.createElement("div");
+        card.className = "bg-gray-800/70 rounded-xl overflow-hidden shadow-lg hover:shadow-indigo-500/50 hover:-translate-y-2 transition-all duration-300 flex flex-col animate-[cardFadeIn_0.5s_ease_forwards] cursor-pointer";
+        card.style.animationDelay = `${i * 100}ms`;
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `مشاهده جزئیات پروژه ${project.title}`);
+        card.innerHTML = `
+          <img src="${project.image || "https://via.placeholder.com/320x180?text=No+Image"}" alt="${project.title}" class="w-full aspect-video object-cover border-b-2 border-indigo-600 bg-gray-800" loading="lazy" />
+          <div class="p-4 sm:p-5 flex flex-col flex-grow">
+            <h3 class="text-base sm:text-lg font-bold text-indigo-200 mb-2 line-clamp-1">${project.title}</h3>
+            <p class="text-gray-400 text-xs sm:text-sm line-clamp-3">${project.description}</p>
+          </div>
+        `;
+        card.addEventListener("click", () => openModal(project));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(project);
+          }
+        });
+        projectsGrid.appendChild(card);
+      });
+    }
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalLink = document.getElementById("modal-link");
+    const modalCloseBtn = document.getElementById("modal-close");
+
+    function openModal(project) {
+      modalImg.src = project.image || "https://via.placeholder.com/640x360?text=No+Image";
+      modalImg.alt = project.title;
+      modalTitle.textContent = project.title;
+      modalDesc.textContent = project.description;
+      if (project.link && project.link.trim() !== "") {
+        modalLink.href = project.link;
+        modalLink.style.display = "inline-block";
+      } else {
+        modalLink.style.display = "none";
+      }
+      modal.classList.remove("hidden");
+      modal.classList.add("animate-[fadeIn_0.3s_ease_forwards]");
+      document.body.style.overflow = "hidden";
+      modalCloseBtn.focus();
+    }
+
+    modalCloseBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    });
+
+    modal.addEventListener("click", e => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+    });
+
+    loadProjects();
+  </script>
+
+</body>
+
+</html>
